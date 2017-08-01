@@ -37,5 +37,18 @@ $(function(){
 			$('.noapp').removeClass('active');
 		},150);
 	});
+	console.log( window.orientation );
+	
+	window.onorientationchange = function(){
+		switch(window.orientation){
+			case -90:
+			case 90:
+			alert("横屏:" + window.orientation);
+			case 0:
+			case 180:
+			alert("竖屏:" + window.orientation);
+			break;
+		}
+	}
 
 })

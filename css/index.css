@@ -77,36 +77,23 @@ a, button, input, textarea {
   }
 }
 
-@media screen and (min-width: 960px) {
-  html {
-    font-size: 150px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  html {
-    font-size: 200px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  html {
-    font-size: 225px;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  html {
-    font-size: 250px;
-  }
+.container {
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
 }
 
 .bg {
-  width: 100%;
-  height: 100vh;
-  background: url("../images/d1.png") no-repeat center center;
+  max-width: 750px;
   background-size: 100% auto;
   position: relative;
+  margin: 0 auto;
+  text-align: center;
+}
+
+img {
+  max-width: 750px;
 }
 
 #wxalert {
@@ -182,4 +169,24 @@ a, button, input, textarea {
 
 .ok:active {
   background: #FF8673;
+}
+
+@media all and (orientation: portrait) {
+  .opa {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 30px;
+  }
+}
+
+@media all and (orientation: landscape) {
+  .opa {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 30px;
+  }
 }

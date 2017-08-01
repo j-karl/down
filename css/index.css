@@ -77,6 +77,12 @@ a, button, input, textarea {
   }
 }
 
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 250px;
+  }
+}
+
 .container {
   width: 100%;
   height: auto;
@@ -85,15 +91,15 @@ a, button, input, textarea {
 }
 
 .bg {
-  max-width: 750px;
-  background-size: 100% auto;
+  height: 100vh;
   position: relative;
   margin: 0 auto;
   text-align: center;
+  overflow: hidden;
 }
 
 img {
-  max-width: 750px;
+  width: 100%;
 }
 
 #wxalert {
@@ -106,15 +112,15 @@ img {
 
 .download {
   width: 5rem;
-  height: 0.9rem;
+  height: 0.75rem;
   font-size: 0.3rem;
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 1rem;
+  bottom: 0.8rem;
   margin: auto;
   text-align: center;
-  line-height: 0.9rem;
+  line-height: 0.75rem;
   border: 1px solid #F5F5F5;
   border-radius: 0.1rem;
   background: #FF8673;
@@ -123,7 +129,9 @@ img {
 }
 
 .download:active {
-  background: #000;
+  background: white;
+  border: 1px solid white;
+  color: #FF8673;
 }
 
 .noapp {
@@ -138,14 +146,16 @@ img {
   line-height: 2rem;
   opacity: 1;
   transition: all 0.3s ease;
-  transform: translate3d(0, 1.5rem, 0);
-  position: relative;
+  position: absolute;
+  top: -2.5rem;
+  left: 0;
+  right: 0;
   opacity: 0;
   box-shadow: 0 0 0.2rem #4B4B4B;
 }
 
 .noapp.active {
-  transform: translate3d(0, 2rem, 0);
+  top: 2.5rem;
   opacity: 1;
 }
 
@@ -171,22 +181,16 @@ img {
   background: #FF8673;
 }
 
-@media all and (orientation: portrait) {
-  .opa {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 30px;
-  }
-}
-
 @media all and (orientation: landscape) {
-  .opa {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 30px;
+  .bg {
+    max-width: 750px;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .noapp.active {
+    top: 0.5rem;
+    opacity: 1;
   }
 }

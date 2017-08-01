@@ -16,7 +16,7 @@ a,button,input,textarea{
 }
 
 @mixin adapter($size){
-  	$list:(320px,360px,375px,384px,412px,414px,600px,640px,768px,800px);
+  	$list:(320px,360px,375px,384px,412px,414px,600px,640px,768px,800px,1600px);
   	@each $i in $list{
     	@media screen and (min-width: #{$i}){
       		html {
@@ -31,21 +31,19 @@ a,button,input,textarea{
 .container{
 	width: 100%;
 	height: auto;
-	// position: fixed;
 	top: 0;
 	left: 0;
 }
 .bg{
-	max-width: 750px;
-	// height: 100vh;
-	// background: url('../images/d1.png') no-repeat center top;
-	background-size: 100% auto;
+	// max-width: 750px;
+	height: 100vh;
 	position: relative;
 	margin: 0 auto;
 	text-align: center;
+	overflow: hidden;
 }
 img{
-	max-width: 750px;
+	width: 100%;
 }
 #wxalert{
 	width: 100%;
@@ -56,15 +54,15 @@ img{
 }
 .download{
 	width: 5rem;
-	height: 0.9rem;
+	height: 0.75rem;
 	font-size: 0.3rem;
 	position: absolute;
 	left: 0;
 	right: 0;
-	bottom: 1rem;
+	bottom: 0.8rem;
 	margin: auto;
 	text-align: center;
-	line-height: 0.9rem;
+	line-height: 0.75rem;
 	border: 1px solid #F5F5F5;
 	border-radius: 0.1rem;
 	background: #FF8673;
@@ -72,7 +70,9 @@ img{
 	transition: all 0.3s ease;
 }
 .download:active{
-	background: #000;
+	background: white;
+	border: 1px solid white;
+	color: #FF8673;
 }
 .noapp{
 	width: 5rem;
@@ -86,13 +86,16 @@ img{
 	line-height: 2rem;
 	opacity: 1;
 	transition: all 0.3s ease;
-	transform: translate3d(0,1.5rem,0);
-	position: relative;
+	// transform: translate3d(0,-16.5rem,0);
+	position: absolute;
+	top: -2.5rem;
+	left: 0;
+	right: 0;
 	opacity: 0;
 	box-shadow: 0 0 0.2rem #4B4B4B;
 }
 .noapp.active{
-	transform: translate3d(0,2rem,0);
+	top: 2.5rem;
 	opacity: 1;
 }
 .ok{
@@ -118,22 +121,21 @@ img{
 
 //竖屏时使用的样式
 @media all and (orientation:portrait) {
-	.opa{
-		display: none;
-		position: absolute;
-		left: 0;
-		top: 0;
-		font-size: 30px;
-	}
+	
+
 }
 
 //横屏时使用的样式
 @media all and (orientation:landscape) {
-	.opa{
-		display: block;
-		position: absolute;
-		right: 0;
-		top: 0;
-		font-size: 30px;
+	.bg{
+		max-width: 750px;
+		height: auto;
+		position: relative;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.noapp.active{
+		top: 0.5rem;
+		opacity: 1;
 	}
 }

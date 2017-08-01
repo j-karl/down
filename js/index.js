@@ -10,24 +10,23 @@ $(function(){
 	$('.download').on('touchend',function(){
 		if (/android/i.test(navigator.userAgent)){
 			if (/micromessenger/i.test(navigator.userAgent)){
-				alert('android wx');
+				// alert('android wx');
 				document.getElementById("wxalert").style.display="block";
 			}else{
-				alert('android wangye')
+				// alert('android wangye')
 				setTimeout(function(){
 					window.location.href="http://www.i618.com.cn/i618/htqf/htqf5714.apk"
 				},150);
 			}
 		}else if (/ipad|iphone|mac/i.test(navigator.userAgent)) {
 			if (navigator.userAgent.match(/OS [7-9]_\d[_\d]* like Mac OS X/i)){
-				alert('iphone os7-9');
+				// alert('iphone os7-9');
 				window.location.href="https://itunes.apple.com/cn/app/hui-tong-qi-fu/id982205587?mt=8"
 			}else{
-				alert('iphone');
+				// alert('iphone');
 				window.location.href="https://itunes.apple.com/cn/app/hui-tong-qi-fu/id982205587?mt=8"
 			}
 		}else{
-			console.log("暂时没有对应客户端");
 			$('.noapp').addClass('active');
 		}
 	});
@@ -37,16 +36,24 @@ $(function(){
 			$('.noapp').removeClass('active');
 		},150);
 	});
-	console.log( window.orientation );
-	
+
+	if( /ipad/i.test(navigator.userAgent) ){
+		$('.bg').css({
+			'overflow': 'auto',
+		});
+		$('.download').css({
+			'bottom': '-1.8rem'
+		});
+	}
+
 	window.onorientationchange = function(){
 		switch(window.orientation){
 			case -90:
 			case 90:
-			alert("横屏:" + window.orientation);
+			// alert("横屏:" + window.orientation);
 			case 0:
 			case 180:
-			alert("竖屏:" + window.orientation);
+			// alert("竖屏:" + window.orientation);
 			break;
 		}
 	}
